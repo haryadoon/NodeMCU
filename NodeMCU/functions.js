@@ -1,4 +1,5 @@
 function set_pin(cmd) {
+  alert("set_pin");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() { 
     if (xhttp.readyState == 4 && xhttp.status == 200) { 
@@ -9,11 +10,13 @@ function set_pin(cmd) {
 }
 
 function set_img(onOff, pin, folder) {
+  alert("set_img");
   btn = document.getElementById('btn'+pin);
   btn.src = folder+onOff+pin+'.png';
 }
 
 function toggle_pin(pin, folder) {
+  alert("toggle_pin");
   btn = document.getElementById('btn'+pin);
   if (btn.src.substr(53,2) == 'on') {
     set_img('off', pin, folder);
@@ -29,6 +32,7 @@ function toggle_pin(pin, folder) {
 }
 
 function offall(folder) {
+  alert("offall");
   for (i = 1; i <= 8; i++) {
     set_img('off', i, folder);
     set_pin('SETOFF'+i);
@@ -36,6 +40,7 @@ function offall(folder) {
 }
 
 function onall(folder) {
+  alert("onall");
   for (i = 1; i <= 8; i++) {
     set_img('on', i, folder);
     set_pin('SETON'+i);

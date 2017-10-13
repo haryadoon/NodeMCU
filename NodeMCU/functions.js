@@ -18,7 +18,8 @@ function set_img(onOff, pin, folder) {
 function toggle_pin(pin, folder) {
 //  alert("toggle_pin");
   btn = document.getElementById('btn'+pin);
-  if (btn.src.substr(53,2) == 'on') {
+//  if (btn.src.substr(53,2) == 'on') {
+  if (btn.src.includes('on')) {
     set_img('off', pin, folder);
     if (both != "BOTH") { // "BOTH" means the actual pins are being cycled directly on the server
       set_pin('SETOFF'+pin);
